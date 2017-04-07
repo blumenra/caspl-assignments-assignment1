@@ -22,7 +22,7 @@ task1:	$(OBJ_DIR)/main1.o $(OBJ_DIR)/task1.o
 $(OBJ_DIR)/%.o : $(SRC_DIR)/%.c
 	$(CC) -c $(CC_FLAGS) $< -o $@
 
-$(OBJ_DIR)/%.o : $(SRC_DIR)/%.s
+$(OBJ_DIR)/%.o : $(OBJ_DIR)/%.s
 	$(ASM) $(ASM_FLAGS) $< -o $@ -l $(subst .o,.lst,$(subst $(OBJ_DIR),$(LIST_DIR),$@))
 
 clean:
