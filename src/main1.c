@@ -7,10 +7,9 @@ extern int my_func(char* buf);
 int main(int argc, char** argv)
 {
   char buf[BUFFER_SIZE];
-  // flush(stdout);
+  fflush(stdout);
 
   fgets(buf, BUFFER_SIZE, stdin);
-  printf("%s", buf);
   my_func(buf);
 
   return 0;
