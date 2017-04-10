@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/html40/loose.dtd">
+<!-- saved from url=(0114)https://www.cs.bgu.ac.il/~caspl172/Forum/Forum_Assignment_1?action=show-thread&id=6a8d3348964503a68673911aa5bc4e1a -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="author" content="sadetsky">
+    <meta name="keywords" content="forum assignment 1">
+    <meta name="description" content="Computer Architecture and System Programming Laboratory - 2017/Spring">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+    <link rel="stylesheet" type="text/css" href="./question4_files/global.css">
+    <link rel="stylesheet" type="text/css" href="./question4_files/structure.css">
+    <link rel="stylesheet" type="text/css" href="./question4_files/print.css" media="print">
+    <link rel="stylesheet" type="text/css" href="./question4_files/main.css">
+    <link rel="shortcut icon" href="https://www.cs.bgu.ac.il/~lab/course.wiki/images/flavicon.gif">
+    <link rel="search" type="application/opensearchdescription+xml" title="Computer Architecture and System Programming Laboratory - 2017/Spring" href="http://www.cs.bgu.ac.il/~caspl172/Search?action=opensearch.xml">
+    <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="https://www.cs.bgu.ac.il/~caspl172/Forum/Forum_Assignment_1?action=rss">
+    <title>Computer Architecture and System Programming Laboratory - 2017/Spring - Forum / Forum Assignment 1</title>
+<script type="text/javascript" src="./question4_files/jquery.js"></script> 
+<script type="text/javascript" src="./question4_files/jquery.cswiki.js"></script> 
+<script type="text/javascript">
+function win(u,n,w,h){
+  if(n == '') n='Small_Window_'+Math.ceil((Math.random()*100000));
+  window.open(u,n,'width='+w+',height='+h+',status=yes,resizable=yes,scrollbars=yes');
+}
+
+function ajax_request(action,params,cont,type){
+  if(!type) type = 'json';
+  $.ajaxSetup({ async:true,
+                error: function (XMLHttpRequest, textStatus, errorThrown) { alert(textStatus);}});
+  params.action = action;
+  params.format = 'ajax';
+  $.post('/~caspl172/index.php', params , cont, type);
+}
+
+// JQuery things
+$(document).ready(function(){
+  $.ImagesBase = "/~lab/course.wiki/images/";
+  $('div.code,pre.code[filename!=]').code({ base: "/~caspl172/index.php" , imagesBase: $.ImagesBase});
+  $('ul.collapsible').collapsible();
+});
+</script> 
+<script type="text/javascript" src="./question4_files/MathJax.js">
+</script>
+<script type="text/javascript">
+MathJax.Hub.Config({
+    extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+    tex2jax:
+    {
+        inlineMath: [["$","$"], ["\\(","\\)"]],
+        ignoreClass: ".*",
+        processClass: "__mathjax"
+    },
+    "HTML-CSS": { webFont: null }
+  });
+</script> 
+  </head>
+<body>
+
+<div id="header">
+<form action="https://www.cs.bgu.ac.il/~caspl172/index.php" method="post" class="main-search" id="search-form">
+<input type="hidden" name="page" value="Search">
+<a href="https://www.cs.bgu.ac.il/~caspl172/Search">Search</a> &nbsp;
+<input type="text" name="q" value="">
+<input type="submit" value="Go">
+</form>
+<div class="title"><a href="https://www.cs.bgu.ac.il/~caspl172/index.php">Computer Architecture and System Programming Laboratory - 2017/Spring</a></div>
+</div>
+
+<div id="container">
+
+<div id="left-sidebar">
+  <ul>
+<li> <a href="https://www.cs.bgu.ac.il/~caspl172/Main">Main</a></li><li> <a href="https://www.cs.bgu.ac.il/~caspl172/wiki.files/202-1-2091.pdf">Syllabus</a></li><li> Course info: <a href="http://www.cs.bgu.ac.il/academics/courses/2017/b/20212091.html">Arch&amp;SPlab</a>,
+<a href="http://www.cs.bgu.ac.il/academics/courses/2017/b/20212071.html">Splab</a>, <a href="http://www.cs.bgu.ac.il/academics/courses/2017/b/20213041.html">Arch only</a>.
+</li><li> <a href="https://www.cs.bgu.ac.il/~caspl172/Announcements">Announcements</a></li><li> <a href="https://www.cs.bgu.ac.il/~caspl172/Assignments">Assignments</a></li><li> <a href="https://www.cs.bgu.ac.il/~caspl172/Class_Material">Class material</a></li><li> <a href="https://www.cs.bgu.ac.il/~caspl172/Practical_Sessions">Practical sessions</a></li><li> <a href="https://www.cs.bgu.ac.il/~caspl172/Lab_Sessions">Lab sessions</a></li><li> <a href="https://www.cs.bgu.ac.il/~caspl172/Lab_Completions">Lab Completions</a></li><li> <a href="https://www.cs.bgu.ac.il/~caspl172/FAQ">FAQ</a></li><li> <a href="https://www.cs.bgu.ac.il/~caspl172/Previous_Exams">Previous exams</a></li><li> <a href="https://www.cs.bgu.ac.il/~caspl172/Grades">Grades</a></li><li> <a href="https://www.cs.bgu.ac.il/~caspl172/Useful_Links">Useful links</a></li><li> <a href="https://www.cs.bgu.ac.il/~caspl172/Forum">Forum</a></li><li> <a href="https://www.cs.bgu.ac.il/~caspl172/Labs_Forum">Labs Forum</a></li></ul>
+    <br>
+  
+    <ul>
+      <li><a href="https://www.cs.bgu.ac.il/~caspl172/CsWiki/RecentChanges">recent changes</a></li>
+      <li><a href="https://www.cs.bgu.ac.il/~caspl172/Login?return=Forum.Forum_Assignment_1">login</a></li>
+    </ul>
+  
+  
+</div>
+
+<div id="center-container">
+    
+<div id="navigate-bar">
+  <div class="actions">
+  <a href="https://www.cs.bgu.ac.il/~caspl172/Forum/Forum_Assignment_1?format=standalone" rel="nofollow">printable version</a>  </div>
+  • <a href="https://www.cs.bgu.ac.il/~caspl172/Forum">Forum</a> » <a href="https://www.cs.bgu.ac.il/~caspl172/Forum/Forum_Assignment_1">Forum Assignment 1</a></div>
+
+<div id="main">
+<div class="info" style="display:none" id="message-info"></div>
+<div class="warning" style="display:none" id="message-error"></div>
+
+
+<script type="text/javascript" src="./question4_files/html2xhtml.js"></script>
+<script type="text/javascript" src="./question4_files/richtext.js"></script>
+<script type="text/javascript"><!--
+RTEConfig.init("/~lab/course.wiki/rte", "/~lab/course.wiki//style/global.css");
+var rte_reply_editor = false;
+function init_reply_htmlarea(id){
+  if(document.getElementById('reply_form_'+id).style.display!='block'){
+    // close edit
+    if(document.getElementById('edit_form_'+id))
+      document.getElementById('edit_form_'+id).style.display='none';
+    // open my
+    document.getElementById('reply_form_'+id).style.display='block';
+    rte_reply_editor = enableRichText('reply_body_'+id+'_div','', '100%',200);
+  }
+}
+function close_reply_htmlarea(id){
+  disableRichText(rte_reply_editor);
+  document.getElementById('reply_form_'+id).style.display='none';
+}
+function submit_reply_htmlarea(form){
+  if(rte_reply_editor){
+    if(form['subject'].value == ''){
+        alert('Subject field required');
+    }
+    else{
+        form['body'].value = getRteSource(rte_reply_editor);
+        form.submit();
+    }
+  }
+  else
+    alert('Some problem with RTE');
+}
+
+var rte_edit_editor = false;
+function init_edit_htmlarea(id){
+  if(document.getElementById('edit_form_'+id).style.display!='block'){
+    // close reply
+    if(document.getElementById('reply_form_'+id))
+      document.getElementById('reply_form_'+id).style.display='none';
+    // open my
+    document.getElementById('edit_form_'+id).style.display='block';
+    var html = document.getElementById('body_'+id).innerHTML;
+    rte_edit_editor = enableRichText('edit_body_'+id+'_div',html, '100%',200);
+  }
+}
+function close_edit_htmlarea(id){
+  disableRichText(rte_edit_editor);
+  document.getElementById('edit_form_'+id).style.display='none';
+}
+function submit_edit_htmlarea(form){
+  if(rte_edit_editor){
+    if(form['subject'].value == ''){
+        alert('Subject field required');
+    }
+    else{
+        form['body'].value = getRteSource(rte_edit_editor);
+        form.submit();
+    }
+  }
+  else
+    alert('Some problem with RTE');
+}
+var plusminus = new Array(new Image(),new Image());
+plusminus[0].src = "/~lab/course.wiki/images/button-plus.gif";
+plusminus[1].src = "/~lab/course.wiki/images/button-minus.gif";
+function toggle_thread(id){
+  var div = document.getElementById('level_'+id);
+  var img = document.getElementById('img_toggle_'+id);
+  if(div.style.display == 'none'){
+    div.style.display = 'block';
+    img.src = plusminus[1].src;
+    img.alt = '[-]';
+  }
+  else{
+    div.style.display = 'none';
+    img.src = plusminus[0].src;
+    img.alt = '[+]';
+  }
+  return true;
+}
+//-->
+</script><style type="text/css">@import "/~lab/course.wiki/rte/rte.css";</style>
+
+
+ 
+
+
+ <div class="forum-message" id="thread6a8d3348964503a68673911aa5bc4e1a">
+    <div class="subject">
+        <a onclick="toggle_thread(&#39;6a8d3348964503a68673911aa5bc4e1a&#39;)" title="toggle children"><img src="./question4_files/button-minus.gif" id="img_toggle_6a8d3348964503a68673911aa5bc4e1a" alt="[-]"></a>
+        Size of K    </div>
+    <div class="date">
+     by <b>shaybenh</b> - Wednesday, 5 April 2017 08:43:17    </div>
+    <div class="body" id="body_6a8d3348964503a68673911aa5bc4e1a"><span style="color: rgb(35, 35, 35); font-family: Arial, sans-serif; font-size: 15px; background-color: rgb(250, 250, 250);"><font color="#990000"><b>In the instructions you wrote: </b></font></span><b><font color="#990000"><br>
+
+3. Returns false (0) if k is non-positive or greater than 31<br>
+<br>
+<br>
+
+my question is can k be zero? because if k=0 so my program will calculate x/2^0 which is x/1<br>
+
+and the output will be x.<br>
+<br>
+
+Thanks,<br>
+<br>
+
+Shay</font></b><span style="color: rgb(35, 35, 35); font-family: Arial, sans-serif; font-size: 15px; background-color: rgb(250, 250, 250);"></span></div>
+
+    <div class="actions">
+    <a href="https://www.cs.bgu.ac.il/~caspl172/Forum/Forum_Assignment_1?action=show-thread&amp;id=6a8d3348964503a68673911aa5bc4e1a">thread</a>    
+    
+    </div>
+    
+ </div>
+  <div class="indent" id="level_6a8d3348964503a68673911aa5bc4e1a">
+     <div class="forum-message" id="thread7a96f7d8cd6d88f12c8bd99e7e5184b1">
+    <div class="subject">
+        Re: Size of K    </div>
+    <div class="date">
+     by <b>sadetsky</b> - Wednesday, 5 April 2017 12:44:39    </div>
+    <div class="body" id="body_7a96f7d8cd6d88f12c8bd99e7e5184b1">although it is possible, still do it exactly according to the assignment requirements
+<div>k should be positive and at most 31</div></div>
+
+    <div class="actions">
+    <a href="https://www.cs.bgu.ac.il/~caspl172/Forum/Forum_Assignment_1?action=show-thread&amp;id=7a96f7d8cd6d88f12c8bd99e7e5184b1">thread</a>    
+    
+    </div>
+    
+ </div>
+  </div>
+ 
+
+
+</div>
+
+
+</div>
+
+</div>
+    
+<div id="footer">
+Page last modified on 7 February 2017,  16:32 by <b>sadetsky</b><br>
+powered by <a href="http://www.cs.bgu.ac.il/~ygleyzer/course.wiki/">CourseWiki 2.4.2</a>
+, <a href="http://www.gzip.org/">gzip</a> supported
+<br>
+generated in 0.00106863 sec.
+</div>
+
+
+
+
+</body></html>

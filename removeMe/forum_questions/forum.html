@@ -1,0 +1,348 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/html40/loose.dtd">
+<!-- saved from url=(0059)https://www.cs.bgu.ac.il/~caspl172/Forum/Forum_Assignment_1 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="author" content="sadetsky">
+    <meta name="keywords" content="forum assignment 1">
+    <meta name="description" content="Computer Architecture and System Programming Laboratory - 2017/Spring">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+    <link rel="stylesheet" type="text/css" href="./forum_files/global.css">
+    <link rel="stylesheet" type="text/css" href="./forum_files/structure.css">
+    <link rel="stylesheet" type="text/css" href="./forum_files/print.css" media="print">
+    <link rel="stylesheet" type="text/css" href="./forum_files/main.css">
+    <link rel="shortcut icon" href="https://www.cs.bgu.ac.il/~lab/course.wiki/images/flavicon.gif">
+    <link rel="search" type="application/opensearchdescription+xml" title="Computer Architecture and System Programming Laboratory - 2017/Spring" href="http://www.cs.bgu.ac.il/~caspl172/Search?action=opensearch.xml">
+    <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="https://www.cs.bgu.ac.il/~caspl172/Forum/Forum_Assignment_1?action=rss">
+    <title>Computer Architecture and System Programming Laboratory - 2017/Spring - Forum / Forum Assignment 1</title>
+<script type="text/javascript" src="./forum_files/jquery.js"></script> 
+<script type="text/javascript" src="./forum_files/jquery.cswiki.js"></script> 
+<script type="text/javascript">
+function win(u,n,w,h){
+  if(n == '') n='Small_Window_'+Math.ceil((Math.random()*100000));
+  window.open(u,n,'width='+w+',height='+h+',status=yes,resizable=yes,scrollbars=yes');
+}
+
+function ajax_request(action,params,cont,type){
+  if(!type) type = 'json';
+  $.ajaxSetup({ async:true,
+                error: function (XMLHttpRequest, textStatus, errorThrown) { alert(textStatus);}});
+  params.action = action;
+  params.format = 'ajax';
+  $.post('/~caspl172/index.php', params , cont, type);
+}
+
+// JQuery things
+$(document).ready(function(){
+  $.ImagesBase = "/~lab/course.wiki/images/";
+  $('div.code,pre.code[filename!=]').code({ base: "/~caspl172/index.php" , imagesBase: $.ImagesBase});
+  $('ul.collapsible').collapsible();
+});
+</script> 
+<script type="text/javascript" src="./forum_files/MathJax.js">
+</script>
+<script type="text/javascript">
+MathJax.Hub.Config({
+    extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+    tex2jax:
+    {
+        inlineMath: [["$","$"], ["\\(","\\)"]],
+        ignoreClass: ".*",
+        processClass: "__mathjax"
+    },
+    "HTML-CSS": { webFont: null }
+  });
+</script> 
+  </head>
+<body>
+
+<div id="header">
+<form action="https://www.cs.bgu.ac.il/~caspl172/index.php" method="post" class="main-search" id="search-form">
+<input type="hidden" name="page" value="Search">
+<a href="https://www.cs.bgu.ac.il/~caspl172/Search">Search</a> &nbsp;
+<input type="text" name="q" value="">
+<input type="submit" value="Go">
+</form>
+<div class="title"><a href="https://www.cs.bgu.ac.il/~caspl172/index.php">Computer Architecture and System Programming Laboratory - 2017/Spring</a></div>
+</div>
+
+<div id="container">
+
+<div id="left-sidebar">
+  <ul>
+<li> <a href="https://www.cs.bgu.ac.il/~caspl172/Main">Main</a></li><li> <a href="https://www.cs.bgu.ac.il/~caspl172/wiki.files/202-1-2091.pdf">Syllabus</a></li><li> Course info: <a href="http://www.cs.bgu.ac.il/academics/courses/2017/b/20212091.html">Arch&amp;SPlab</a>,
+<a href="http://www.cs.bgu.ac.il/academics/courses/2017/b/20212071.html">Splab</a>, <a href="http://www.cs.bgu.ac.il/academics/courses/2017/b/20213041.html">Arch only</a>.
+</li><li> <a href="https://www.cs.bgu.ac.il/~caspl172/Announcements">Announcements</a></li><li> <a href="https://www.cs.bgu.ac.il/~caspl172/Assignments">Assignments</a></li><li> <a href="https://www.cs.bgu.ac.il/~caspl172/Class_Material">Class material</a></li><li> <a href="https://www.cs.bgu.ac.il/~caspl172/Practical_Sessions">Practical sessions</a></li><li> <a href="https://www.cs.bgu.ac.il/~caspl172/Lab_Sessions">Lab sessions</a></li><li> <a href="https://www.cs.bgu.ac.il/~caspl172/Lab_Completions">Lab Completions</a></li><li> <a href="https://www.cs.bgu.ac.il/~caspl172/FAQ">FAQ</a></li><li> <a href="https://www.cs.bgu.ac.il/~caspl172/Previous_Exams">Previous exams</a></li><li> <a href="https://www.cs.bgu.ac.il/~caspl172/Grades">Grades</a></li><li> <a href="https://www.cs.bgu.ac.il/~caspl172/Useful_Links">Useful links</a></li><li> <a href="https://www.cs.bgu.ac.il/~caspl172/Forum">Forum</a></li><li> <a href="https://www.cs.bgu.ac.il/~caspl172/Labs_Forum">Labs Forum</a></li></ul>
+    <br>
+  
+    <ul>
+      <li><a href="https://www.cs.bgu.ac.il/~caspl172/CsWiki/RecentChanges">recent changes</a></li>
+      <li><a href="https://www.cs.bgu.ac.il/~caspl172/Login?return=Forum.Forum_Assignment_1">login</a></li>
+    </ul>
+  
+  
+</div>
+
+<div id="center-container">
+    
+<div id="navigate-bar">
+  <div class="actions">
+  <a href="https://www.cs.bgu.ac.il/~caspl172/Forum/Forum_Assignment_1?format=standalone" rel="nofollow">printable version</a>  </div>
+  • <a href="https://www.cs.bgu.ac.il/~caspl172/Forum">Forum</a> » <a href="https://www.cs.bgu.ac.il/~caspl172/Forum/Forum_Assignment_1">Forum Assignment 1</a></div>
+
+<div id="main">
+<div class="info" style="display:none" id="message-info"></div>
+<div class="warning" style="display:none" id="message-error"></div>
+
+
+<script type="text/javascript" src="./forum_files/html2xhtml.js"></script>
+<script type="text/javascript" src="./forum_files/richtext.js"></script>
+<script type="text/javascript"><!--
+RTEConfig.init("/~lab/course.wiki/rte", "/~lab/course.wiki//style/global.css");
+var rte_reply_editor = false;
+function init_reply_htmlarea(id){
+  if(document.getElementById('reply_form_'+id).style.display!='block'){
+    // close edit
+    if(document.getElementById('edit_form_'+id))
+      document.getElementById('edit_form_'+id).style.display='none';
+    // open my
+    document.getElementById('reply_form_'+id).style.display='block';
+    rte_reply_editor = enableRichText('reply_body_'+id+'_div','', '100%',200);
+  }
+}
+function close_reply_htmlarea(id){
+  disableRichText(rte_reply_editor);
+  document.getElementById('reply_form_'+id).style.display='none';
+}
+function submit_reply_htmlarea(form){
+  if(rte_reply_editor){
+    if(form['subject'].value == ''){
+        alert('Subject field required');
+    }
+    else{
+        form['body'].value = getRteSource(rte_reply_editor);
+        form.submit();
+    }
+  }
+  else
+    alert('Some problem with RTE');
+}
+
+var rte_edit_editor = false;
+function init_edit_htmlarea(id){
+  if(document.getElementById('edit_form_'+id).style.display!='block'){
+    // close reply
+    if(document.getElementById('reply_form_'+id))
+      document.getElementById('reply_form_'+id).style.display='none';
+    // open my
+    document.getElementById('edit_form_'+id).style.display='block';
+    var html = document.getElementById('body_'+id).innerHTML;
+    rte_edit_editor = enableRichText('edit_body_'+id+'_div',html, '100%',200);
+  }
+}
+function close_edit_htmlarea(id){
+  disableRichText(rte_edit_editor);
+  document.getElementById('edit_form_'+id).style.display='none';
+}
+function submit_edit_htmlarea(form){
+  if(rte_edit_editor){
+    if(form['subject'].value == ''){
+        alert('Subject field required');
+    }
+    else{
+        form['body'].value = getRteSource(rte_edit_editor);
+        form.submit();
+    }
+  }
+  else
+    alert('Some problem with RTE');
+}
+var plusminus = new Array(new Image(),new Image());
+plusminus[0].src = "/~lab/course.wiki/images/button-plus.gif";
+plusminus[1].src = "/~lab/course.wiki/images/button-minus.gif";
+function toggle_thread(id){
+  var div = document.getElementById('level_'+id);
+  var img = document.getElementById('img_toggle_'+id);
+  if(div.style.display == 'none'){
+    div.style.display = 'block';
+    img.src = plusminus[1].src;
+    img.alt = '[-]';
+  }
+  else{
+    div.style.display = 'none';
+    img.src = plusminus[0].src;
+    img.alt = '[+]';
+  }
+  return true;
+}
+//-->
+</script><style type="text/css">@import "/~lab/course.wiki/rte/rte.css";</style>
+
+
+ 
+
+
+<div class="rss-panel"> 
+<a href="https://www.cs.bgu.ac.il/~caspl172/Forum/Forum_Assignment_1?action=rss"><img src="./forum_files/rss2.gif" border="0" alt="rss2"></a>&nbsp;
+<a href="http://en.wikipedia.org/wiki/RSS_%28file_format%29">more about RSS</a>
+</div>
+<div class="forum-message"> 
+<div class="subject">
+<a href="https://www.cs.bgu.ac.il/~caspl172/Forum/Forum_Assignment_1?action=show-thread&amp;id=d3cdc1d9057f2184634614f0e2eae607">Problem compiling your files</a><br>
+<span class="small normal">3 replies</span>
+</div>
+<div class="date">
+   by <b>landmann</b> - Friday, 7 April 2017 10:58:19      <br>
+   <i>last update: 9 Apr 2017 21:21:41      by <b>sadetsky</b>
+      </i>
+   </div>
+</div>
+<br>
+
+<div class="forum-message"> 
+<div class="subject">
+<a href="https://www.cs.bgu.ac.il/~caspl172/Forum/Forum_Assignment_1?action=show-thread&amp;id=a1ec3cfbe17ca06b1c837073f8f675db">main1 flush function problem</a><br>
+<span class="small normal">4 replies</span>
+</div>
+<div class="date">
+   by <b>hayatb</b> - Thursday, 6 April 2017 00:14:10      <br>
+   <i>last update: 6 Apr 2017 21:47:08      by <b>sadetsky</b>
+      </i>
+   </div>
+</div>
+<br>
+
+<div class="forum-message"> 
+<div class="subject">
+<a href="https://www.cs.bgu.ac.il/~caspl172/Forum/Forum_Assignment_1?action=show-thread&amp;id=067c3b1ab18dccbe00b4630953278bec">Type input part 2</a><br>
+<span class="small normal">1 reply</span>
+</div>
+<div class="date">
+   by <b>symonitz</b> - Wednesday, 5 April 2017 16:45:53      <br>
+   <i>last update: 5 Apr 2017 17:37:04      by <b>sadetsky</b>
+      </i>
+   </div>
+</div>
+<br>
+
+<div class="forum-message"> 
+<div class="subject">
+<a href="https://www.cs.bgu.ac.il/~caspl172/Forum/Forum_Assignment_1?action=show-thread&amp;id=6a8d3348964503a68673911aa5bc4e1a">Size of K</a><br>
+<span class="small normal">1 reply</span>
+</div>
+<div class="date">
+   by <b>shaybenh</b> - Wednesday, 5 April 2017 08:43:17      <br>
+   <i>last update: 5 Apr 2017 12:44:39      by <b>sadetsky</b>
+      </i>
+   </div>
+</div>
+<br>
+
+<div class="forum-message"> 
+<div class="subject">
+<a href="https://www.cs.bgu.ac.il/~caspl172/Forum/Forum_Assignment_1?action=show-thread&amp;id=a60fd65578f2b9aaaf75d41c4c5738dc">input in part 1</a><br>
+<span class="small normal">1 reply</span>
+</div>
+<div class="date">
+   by <b>sleiman</b> - Wednesday, 5 April 2017 04:59:03      <br>
+   <i>last update: 5 Apr 2017 12:42:18      by <b>sadetsky</b>
+      </i>
+   </div>
+</div>
+<br>
+
+<div class="forum-message"> 
+<div class="subject">
+<a href="https://www.cs.bgu.ac.il/~caspl172/Forum/Forum_Assignment_1?action=show-thread&amp;id=66c34190e244e48390ea732740023dc9">Unsigned numbers</a><br>
+<span class="small normal">1 reply</span>
+</div>
+<div class="date">
+   by <b>adimara</b> - Tuesday, 4 April 2017 19:53:06      <br>
+   <i>last update: 5 Apr 2017 12:40:54      by <b>sadetsky</b>
+      </i>
+   </div>
+</div>
+<br>
+
+<div class="forum-message"> 
+<div class="subject">
+<a href="https://www.cs.bgu.ac.il/~caspl172/Forum/Forum_Assignment_1?action=show-thread&amp;id=33b36c55c708f3ef4748496c4c2e839b">'\n'</a><br>
+<span class="small normal">3 replies</span>
+</div>
+<div class="date">
+   by <b>gidib</b> - Monday, 3 April 2017 12:59:10      <br>
+   <i>last update: 5 Apr 2017 12:38:34      by <b>sadetsky</b>
+      </i>
+   </div>
+</div>
+<br>
+
+<div class="forum-message"> 
+<div class="subject">
+<a href="https://www.cs.bgu.ac.il/~caspl172/Forum/Forum_Assignment_1?action=show-thread&amp;id=10ed365cd5384d85f01e2bee0b9db58f">input in part 2</a><br>
+<span class="small normal">1 reply</span>
+</div>
+<div class="date">
+   by <b>lioryari</b> - Monday, 3 April 2017 18:40:22      <br>
+   <i>last update: 4 Apr 2017 00:49:31      by <b>sadetsky</b>
+      </i>
+   </div>
+</div>
+<br>
+
+<div class="forum-message"> 
+<div class="subject">
+<a href="https://www.cs.bgu.ac.il/~caspl172/Forum/Forum_Assignment_1?action=show-thread&amp;id=3f74187abc70c15c899662b281dcfb5e">changing ecx</a><br>
+<span class="small normal">1 reply</span>
+</div>
+<div class="date">
+   by <b>romavic</b> - Saturday, 1 April 2017 16:46:58      <br>
+   <i>last update: 1 Apr 2017 23:02:22      by <b>sadetsky</b>
+      </i>
+   </div>
+</div>
+<br>
+
+<div class="forum-message"> 
+<div class="subject">
+<a href="https://www.cs.bgu.ac.il/~caspl172/Forum/Forum_Assignment_1?action=show-thread&amp;id=5c9e2bbf53ec0910dbd17ec869bff971">Size limitation on the value of "K"</a><br>
+<span class="small normal">1 reply</span>
+</div>
+<div class="date">
+   by <b>chenmor</b> - Friday, 31 March 2017 18:50:17      <br>
+   <i>last update: 1 Apr 2017 15:17:25      by <b>sadetsky</b>
+      </i>
+   </div>
+</div>
+<br>
+
+<br>
+
+   
+<p> 
+<br><br>
+<a href="https://www.cs.bgu.ac.il/~caspl172/Login?return=Forum.Forum_Assignment_1">Add new topic</a></p>
+ 
+
+
+
+
+</div>
+
+
+</div>
+
+</div>
+    
+<div id="footer">
+Page last modified on 7 February 2017,  16:32 by <b>sadetsky</b><br>
+powered by <a href="http://www.cs.bgu.ac.il/~ygleyzer/course.wiki/">CourseWiki 2.4.2</a>
+, <a href="http://www.gzip.org/">gzip</a> supported
+<br>
+generated in 0.00111587 sec.
+</div>
+
+
+
+
+</body></html>

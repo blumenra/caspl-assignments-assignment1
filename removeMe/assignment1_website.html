@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/html40/loose.dtd">
+<!-- saved from url=(0059)https://www.cs.bgu.ac.il/~caspl172/Assignments/Assignment_1 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="author" content="sadetsky">
+    <meta name="keywords" content="assignment 1">
+    <meta name="description" content="Computer Architecture and System Programming Laboratory - 2017/Spring">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+    <link rel="stylesheet" type="text/css" href="./assignment1_website_files/global.css">
+    <link rel="stylesheet" type="text/css" href="./assignment1_website_files/structure.css">
+    <link rel="stylesheet" type="text/css" href="./assignment1_website_files/print.css" media="print">
+    <link rel="stylesheet" type="text/css" href="./assignment1_website_files/main.css">
+    <link rel="shortcut icon" href="https://www.cs.bgu.ac.il/~lab/course.wiki/images/flavicon.gif">
+    <link rel="search" type="application/opensearchdescription+xml" title="Computer Architecture and System Programming Laboratory - 2017/Spring" href="http://www.cs.bgu.ac.il/~caspl172/Search?action=opensearch.xml">
+        <title>Computer Architecture and System Programming Laboratory - 2017/Spring - Assignments / Assignment 1</title>
+<script type="text/javascript" src="./assignment1_website_files/jquery.js"></script> 
+<script type="text/javascript" src="./assignment1_website_files/jquery.cswiki.js"></script> 
+<script type="text/javascript">
+function win(u,n,w,h){
+  if(n == '') n='Small_Window_'+Math.ceil((Math.random()*100000));
+  window.open(u,n,'width='+w+',height='+h+',status=yes,resizable=yes,scrollbars=yes');
+}
+
+function ajax_request(action,params,cont,type){
+  if(!type) type = 'json';
+  $.ajaxSetup({ async:true,
+                error: function (XMLHttpRequest, textStatus, errorThrown) { alert(textStatus);}});
+  params.action = action;
+  params.format = 'ajax';
+  $.post('/~caspl172/index.php', params , cont, type);
+}
+
+// JQuery things
+$(document).ready(function(){
+  $.ImagesBase = "/~lab/course.wiki/images/";
+  $('div.code,pre.code[filename!=]').code({ base: "/~caspl172/index.php" , imagesBase: $.ImagesBase});
+  $('ul.collapsible').collapsible();
+});
+</script> 
+<script type="text/javascript" src="./assignment1_website_files/MathJax.js">
+</script>
+<script type="text/javascript">
+MathJax.Hub.Config({
+    extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+    tex2jax:
+    {
+        inlineMath: [["$","$"], ["\\(","\\)"]],
+        ignoreClass: ".*",
+        processClass: "__mathjax"
+    },
+    "HTML-CSS": { webFont: null }
+  });
+</script> 
+  </head>
+<body>
+
+<div id="header">
+<form action="https://www.cs.bgu.ac.il/~caspl172/index.php" method="post" class="main-search" id="search-form">
+<input type="hidden" name="page" value="Search">
+<a href="https://www.cs.bgu.ac.il/~caspl172/Search">Search</a> &nbsp;
+<input type="text" name="q" value="">
+<input type="submit" value="Go">
+</form>
+<div class="title"><a href="https://www.cs.bgu.ac.il/~caspl172/index.php">Computer Architecture and System Programming Laboratory - 2017/Spring</a></div>
+</div>
+
+<div id="container">
+
+<div id="left-sidebar">
+  <ul>
+<li> <a href="https://www.cs.bgu.ac.il/~caspl172/Main">Main</a></li><li> <a href="https://www.cs.bgu.ac.il/~caspl172/wiki.files/202-1-2091.pdf">Syllabus</a></li><li> Course info: <a href="http://www.cs.bgu.ac.il/academics/courses/2017/b/20212091.html">Arch&amp;SPlab</a>,
+<a href="http://www.cs.bgu.ac.il/academics/courses/2017/b/20212071.html">Splab</a>, <a href="http://www.cs.bgu.ac.il/academics/courses/2017/b/20213041.html">Arch only</a>.
+</li><li> <a href="https://www.cs.bgu.ac.il/~caspl172/Announcements">Announcements</a></li><li> <a href="https://www.cs.bgu.ac.il/~caspl172/Assignments">Assignments</a></li><li> <a href="https://www.cs.bgu.ac.il/~caspl172/Class_Material">Class material</a></li><li> <a href="https://www.cs.bgu.ac.il/~caspl172/Practical_Sessions">Practical sessions</a></li><li> <a href="https://www.cs.bgu.ac.il/~caspl172/Lab_Sessions">Lab sessions</a></li><li> <a href="https://www.cs.bgu.ac.il/~caspl172/Lab_Completions">Lab Completions</a></li><li> <a href="https://www.cs.bgu.ac.il/~caspl172/FAQ">FAQ</a></li><li> <a href="https://www.cs.bgu.ac.il/~caspl172/Previous_Exams">Previous exams</a></li><li> <a href="https://www.cs.bgu.ac.il/~caspl172/Grades">Grades</a></li><li> <a href="https://www.cs.bgu.ac.il/~caspl172/Useful_Links">Useful links</a></li><li> <a href="https://www.cs.bgu.ac.il/~caspl172/Forum">Forum</a></li><li> <a href="https://www.cs.bgu.ac.il/~caspl172/Labs_Forum">Labs Forum</a></li></ul>
+    <br>
+  
+    <ul>
+      <li><a href="https://www.cs.bgu.ac.il/~caspl172/CsWiki/RecentChanges">recent changes</a></li>
+      <li><a href="https://www.cs.bgu.ac.il/~caspl172/Login?return=Assignments.Assignment_1">login</a></li>
+    </ul>
+  
+  
+</div>
+
+<div id="center-container">
+    
+<div id="navigate-bar">
+  <div class="actions">
+  <a href="https://www.cs.bgu.ac.il/~caspl172/Assignments/Assignment_1?format=standalone" rel="nofollow">printable version</a>  </div>
+  • <a href="https://www.cs.bgu.ac.il/~caspl172/Assignments">Assignments</a> » <a href="https://www.cs.bgu.ac.il/~caspl172/Assignments/Assignment_1">Assignment 1</a></div>
+
+<div id="main">
+<div class="info" style="display:none" id="message-info"></div>
+<div class="warning" style="display:none" id="message-error"></div>
+
+
+<table class="toc"><tbody><tr><td id="showtoc58e00fc3ae74d" style="display:none"><b>Contents</b> (<a onclick="document.getElementById(&#39;toc58e00fc3ae74d&#39;).style.display=&#39;&#39;;document.getElementById(&#39;showtoc58e00fc3ae74d&#39;).style.display=&#39;none&#39;">show</a>)</td></tr><tr id="toc58e00fc3ae74d"><td><b>Contents</b> (<a onclick="document.getElementById(&#39;toc58e00fc3ae74d&#39;).style.display=&#39;none&#39;;document.getElementById(&#39;showtoc58e00fc3ae74d&#39;).style.display=&#39;&#39;">hide</a>)<br><div style="margin-left: 8px">1&nbsp;<a href="https://www.cs.bgu.ac.il/~caspl172/Assignments/Assignment_1#assignment_description">Assignment Description</a></div>
+<div style="margin-left: 12px">1.1&nbsp;<a href="https://www.cs.bgu.ac.il/~caspl172/Assignments/Assignment_1#part_1_-_converting_number_in_hexadecimal_base_to_ascii_characters">Part 1 - Converting number in hexadecimal base to ASCII characters</a></div>
+<div style="margin-left: 12px">1.2&nbsp;<a href="https://www.cs.bgu.ac.il/~caspl172/Assignments/Assignment_1#examples">Examples:</a></div>
+<div style="margin-left: 12px">1.3&nbsp;<a href="https://www.cs.bgu.ac.il/~caspl172/Assignments/Assignment_1#part_2_-_c_calling_convention">Part 2 - C calling convention</a></div>
+<div style="margin-left: 12px">1.4&nbsp;<a href="https://www.cs.bgu.ac.il/~caspl172/Assignments/Assignment_1#example_a_single_round_with_x_1af2345ff23b0001">Example: a single round with x = 1AF2345FF23B0001</a></div>
+<div style="margin-left: 8px">2&nbsp;<a href="https://www.cs.bgu.ac.il/~caspl172/Assignments/Assignment_1#what_we_provide">What We Provide</a></div>
+<div style="margin-left: 8px">3&nbsp;<a href="https://www.cs.bgu.ac.il/~caspl172/Assignments/Assignment_1#submission_instructions">Submission Instructions</a></div>
+</td></tr></tbody></table><h1>Assignmen 1: ASCII and Hexadecimal, C calling convention</h1> 
+<p>
+<b>Submissions which deviate from these instructions will not be graded!</b> <br> <br>
+<b><u>Please make your output exactly as in the examples below.<br>
+Otherwise automatic scripts would fail on your assignment and you will lose some credit for this.</u></b>
+</p><h2 id="assignment_description">Assignment Description</h2>
+This assignment has two parts:
+<h3 id="part_1_-_converting_number_in_hexadecimal_base_to_ascii_characters">Part 1 - Converting number in hexadecimal base to ASCII characters</h3>
+We provide you a simple program in C that inputs a string (as a line) from the user, 
+and then calls a function my_func that receives a pointer to the beginning of a null terminated string.<br>
+You need to implement my_func in assembly language.Assume that the input string contains STRICTLY hexadecimal digits (assume input correctness), and is of even length, not including the null terminator.<br>
+Your function should read each two digits (string characters) at a time, and insert into an output string a character corresponding to their ASCII value (in hexadecimal representation). The output string should also be null terminated. my_func should print the resulting string.
+<p></p><p>
+You may assume the domain of characters (in hexadecimal asciitable values) is: 20 (space) to 7E (~).
+</p><p>
+Note that we are providing a skeleton to use in writing the assembly language code below.<br>
+<span class="mark">You are not allowed make any changes to the main1.c file</span>.
+</p><h3 id="examples"> Examples: </h3>
+<ul>
+<li> given "33343536" as the input string (the quotes are not part of the string),
+your program should output the string: "3456" <br>
+&gt; task1.bin<br>
+33343536<br>
+3456<br>
+</li><li> given "4c656d6f6e" as the input string (the quotes are not part of the string),
+your program should output the string: "Lemon" <br>
+&gt; task1.bin<br>
+4c656d6f6e<br>
+Lemon<br>
+</li><li> given "373E393D46616C7365" as the input string (the quotes are not part of the string),
+your program should output the string: "7&gt;9=False" <br>
+&gt; task1.bin<br>
+373E393D46616C7365<br>
+7&gt;9=False<br>
+</li></ul>
+<br>
+Character conversion will <b>NOT</b> be in place this time. You are to write the output into another buffer (provided in the code) before printing. <br>
+<h3 id="part_2_-_c_calling_convention">Part 2 - C calling convention </h3>
+In this part you need to implement entirely on your own. You are to create a C file and an assembly language file as specified in the submission instructions below. 
+<p></p><p>
+You are to write a C program that:
+</p><ol>
+<li> Reads two integer (32 bits) unsigned numbers x and k (in decimal) from the user.
+</li><li> Call a function ‘calc_div(int x, int k)’ written in ASSEMBLY language with the above integers as arguments.
+</li></ol>
+<br>
+The assembly language function ‘calc_div(int x, int k)' performs the following steps:
+<ol>
+<li> Calls a C function 'check' (as defined below) to check if the numbers are legal.
+</li><li> If x and k are legal, computes z by calculating x div 2^k. Division does not consider the reminder and the result is integer (e.g. 5 div 2 = 2).
+</li><li> Calls printf to print the result z in decimal.
+</li><li> Either x or k, or both are not legal, calls printf to print "x or k, or both are off range". 
+</li></ol>
+<br>
+The C function 'check(int x, int k)' performs:
+<ol>
+<li> Gets 2 arguments: integers x and k
+</li><li> Returns false (0) if x is negative
+</li><li> Returns false (0) if k is non-positive or greater than 31
+</li><li> Returns true (1) otherwise
+</li></ol><h3 id="example_a_single_round_with_x_1af2345ff23b0001"> Example: a single round with x = 1AF2345FF23B0001 </h3>
+For x equals 5 and k equals 1, the result is 5 div 2^1 = 2.<br>
+&gt; task2.bin <br>
+5<br>
+1<br>
+2<br><br>
+<h2 id="what_we_provide">What We Provide</h2>
+The attached files:
+<ul>
+<li> <a href="https://www.cs.bgu.ac.il/~caspl172/wiki.files/Makefile_ass1">Makefile</a></li><li> <a href="https://www.cs.bgu.ac.il/~caspl172/wiki.files/main1_ass1.c">main1_ass1.c</a></li><li> <a href="https://www.cs.bgu.ac.il/~caspl172/wiki.files/task1_ass1.s">task1_ass1.s</a></li></ul>
+<br>
+For Part 1, you only need to edit task1.s in the location indicated in the file, as in Assignment 0. 
+For Part 2, you are required to create 2 new files: main2.c and task2.s. These files will contain the code for Part 2 as described above. You are also required to modify the supplied Makefile so that main2.c and task2.s will be compiled in a manner similar to Part 1.
+<p></p><p>
+In order to compile the files for the first part, you only need to use the 'make' utility. 
+In order to compile the files for the second part, you will have to modify the 'Makefile'. 
+You can take example from the way Part 1 is compiled. 
+Make sure the resulting files are in the appropriate directories as described for the first part. Also, make sure the name of the executable for the second part is 'task2.bin'.
+</p><h2 id="submission_instructions">Submission Instructions</h2>
+You are to submit a single zip file, <b> ID1_ID2.zip </b>, includes 3 files: <b>task1.s</b>, <b>main2.c</b> and <b>task2.s</b> . Do not add new directory structure to the zip file! Make sure you follow the coding and submission instructions correctly (print exactly as requested). <br>
+<p></p><p>
+<b><span style="font-size:120%">Good Luck!</span></b>
+
+
+</p></div>
+
+
+</div>
+
+</div>
+    
+<div id="footer">
+Page last modified on 1 April 2017,  23:38 by <b>sadetsky</b><br>
+powered by <a href="http://www.cs.bgu.ac.il/~ygleyzer/course.wiki/">CourseWiki 2.4.2</a>
+, <a href="http://www.gzip.org/">gzip</a> supported
+<br>
+generated in 0.00102837 sec.
+</div>
+
+
+
+
+</body></html>
