@@ -9,12 +9,13 @@ OBJ_DIR		:=	obj
 LIST_DIR	:=	list
 BIN_DIR		:=	bin
 
-all: task1 # task2
+all: task1  task2
 
 task1:	$(OBJ_DIR)/main1.o $(OBJ_DIR)/task1.o
 	$(CC) -o $(BIN_DIR)/task1.bin $(OBJ_DIR)/main1.o $(OBJ_DIR)/task1.o
 
-# task2:
+task2:  $(OBJ_DIR)/main2.o $(OBJ_DIR)/task2.o
+	$(CC) -o $(BIN_DIR)/task2.bin $(OBJ_DIR)/main2.o $(OBJ_DIR)/task2.o
 # add your makefile code here...
 # uncomment task2 in section 'all'
 
