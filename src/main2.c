@@ -16,6 +16,6 @@ int main(int argc, char** argv){
   	
 	calc_div(x, k);
 
-	printf("you entered:\nx = %d\nk = %d\n", x, k);
+	// printf("you entered:\nx = %d\nk = %d\n", x, k);
 	return 0;
 }
