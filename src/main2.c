@@ -14,5 +14,7 @@ int main(int argc, char** argv){
   	
 	calc_div(x, k);
 
+	puts("");
+
 	return 0;
 }
