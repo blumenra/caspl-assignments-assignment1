@@ -4,7 +4,7 @@ format:
 
 section .data
 error:
-	DB "x or k, or both are off range", 30, 0 ;format integer
+	DB "x or k, or both are off range", 29, 0 ;format integer
 
 section .bss
 ans: 
@@ -30,10 +30,10 @@ calc_div:
 
 	mov ecx, dword [ebp+12]
 	mov ebx, 1
-	sal ebx, cl
+	shl ebx, cl
 	mov edx, 0
 	mov eax, dword [ebp+8]
-	idiv ebx
+	div ebx
 
 
 
@@ -81,7 +81,6 @@ invalid_param:
 
 
 invalid:
-	mov byte [error+29], 10
 	push error
 	call printf
 	add esp, 4
