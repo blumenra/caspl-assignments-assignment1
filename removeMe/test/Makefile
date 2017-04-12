@@ -15,7 +15,7 @@ task1:	$(OBJ_DIR)/main1.o $(OBJ_DIR)/task1.o
 	$(CC) -o $(BIN_DIR)/task1.bin $(OBJ_DIR)/main1.o $(OBJ_DIR)/task1.o
 
 task2:  $(OBJ_DIR)/main2.o $(OBJ_DIR)/task2.o
-	$(CC) -o $(BIN_DIR)/task2.bin $(OBJ_DIR)/main2.o $(OBJ_DIR)/task2.o
+	$(CC) -o $(BIN_DIR)/task2.bin $(OBJ_DIR)/main2.o $(OBJ_DIR)/task2.o -lm
 # add your makefile code here...
 # uncomment task2 in section 'all'
 
