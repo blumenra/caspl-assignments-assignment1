@@ -21,20 +21,27 @@ calc_div:
 	pushad		; backup registers
 	pushfd		; backup flags
 
-	mov ecx, dword [ebp+8]
-	;push ecx
-	;mov ecx, dword [ebp+4]
-	;push ecx
+	push dword [ebp+12]  ;send argument k to function 'check'
+	push dword [ebp+8]	 ;send argument x to function 'check'
 
 	call check	; return value on dl
-	cmp dl, 0
+	cmp dl, 1
 	jnz invalid
 
-	mov dword [ans], ecx
+	mov ecx, dword [ebp+12]
+	mov ebx, 1
+	sal ebx, cl
+	mov edx, 0
+	mov eax, dword [ebp+8]
+	idiv ebx
+
+
+
+	mov dword [ans], eax
 	push dword [ans]
 	push format
 	call printf
-	;add esp, 8
+	add esp, 8
 	
 
 clear_stack:
@@ -46,8 +53,31 @@ clear_stack:
 	ret
 
 check:
-	mov dl, 0
+	push ebp
+	mov ebp, esp
+
+	cmp dword [ebp+8], 0  ; check if x is negative
+	jl invalid_param
+
+	cmp dword [ebp+12], 0 ; check if k is non-positive
+	jle invalid_param
+
+	cmp dword [ebp+12], 31; check if k is greater then 31
+	ja invalid_param
+
+	mov dl, 1
+
+check_ret:
+	
+	mov esp, ebp
+	pop ebp
+	;add esp, 8
 	ret
+
+
+invalid_param:
+	mov dl, 0
+	jmp check_ret
 
 
 invalid:
