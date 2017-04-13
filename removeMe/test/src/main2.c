@@ -6,14 +6,14 @@ extern int calc_div(int x, int k);
 void test1();
 void testParams(int x, int k);
 void test2();
-void testResult(int x, int k);
+void testResult(int x, int k, int testNum);
 int calcResult(int x, int k);
 
 int main(int argc, char** argv){
 
   	fflush(stdout);
 
-  	test1();
+  	// test1();
   	test2();
 
 	return 0;
@@ -102,28 +102,34 @@ void test1(){
 
 void test2(){
 	
+	int testNum = 1;
+	
 	puts("TEST 2:\n");
 
-	testResult(5, 1);
-	testResult(5, 2);
-	testResult(1, 5);
-	testResult(0, 10);
-	testResult(100, 6);
-	testResult(100, 1);
-	testResult(8, 3);
-	testResult(pow(2, 31), 1); //causes OVERFLOW!! wating for an answer of what is the max value of x
-	testResult(pow(2, 31) - 1, 31);
-	testResult(pow(2, 30), 20);
+	testResult(5, 1, testNum++); // test 1
+	testResult(5, 2, testNum++); // test 2
+	testResult(1, 5, testNum++); // test 3
+	testResult(0, 10, testNum++); // test 4
+	testResult(100, 6, testNum++); // test 5
+	testResult(100, 1, testNum++); // test 6
+	testResult(8, 3, testNum++); // test 7
+	testResult(pow(2, 31) - 1, 31, testNum++); // test 8
+	testResult(pow(2, 31) - 1, 1, testNum++); // test 9
+	testResult(pow(2, 30), 20, testNum++); // test 10
+	testResult(0, 31, testNum++); // test 11
 };
 
-void testResult(int x, int k){
+void testResult(int x, int k, int testNum){
 	
 	int res = 0;
+
+	printf("test 2.%d:\n", testNum);
+	printf("\t");
 	res = calcResult(x, k);
-	printf("x: %d\n", x);
-	printf("k: %d\n", k);
-	printf("Expected result: %d\n", res);
-	printf("Actual result:   ");
+	printf("\tx: %d\n", x);
+	printf("\tk: %d\n", k);
+	printf("\tExpected result: %d\n", res);
+	printf("\tActual result:   ");
 	calc_div(x, k);
 	puts("\n");	
 };
