@@ -1,3 +1,7 @@
 Task 1:
 	1. handle both input with upper-case letters and lower-case letters.
 	2. 
+
+general:
+	1. remove removeMe folder before submiting
+	2. remove hidden .git before submiting
